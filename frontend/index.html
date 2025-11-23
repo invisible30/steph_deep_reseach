@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LangGraph 研究助手</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <h1>🧠 LangGraph 研究助手</h1>
+            <div class="connection-status" id="connectionStatus">
+                <span class="status-dot"></span>
+                <span class="status-text">连接中...</span>
+            </div>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <!-- 聊天历史区域 -->
+            <div class="chat-history" id="chatHistory">
+                <div class="welcome-message">
+                    <h2>👋 欢迎使用 LangGraph 研究助手</h2>
+                    <p>我可以帮您对复杂问题进行深度研究和分析。请输入您想要研究的问题。</p>
+                    <div class="examples">
+                        <h3>示例问题：</h3>
+                        <div class="example-chip" onclick="setExampleQuestion('未来5年人工智能发展趋势')">
+                            未来5年人工智能发展趋势
+                        </div>
+                        <div class="example-chip" onclick="setExampleQuestion('量子计算的商业应用前景')">
+                            量子计算的商业应用前景
+                        </div>
+                        <div class="example-chip" onclick="setExampleQuestion('新能源汽车技术路线分析')">
+                            新能源汽车技术路线分析
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 研究进度区域 -->
+            <div class="progress-container" id="progressContainer" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-step active" id="stepPlan">
+                        <div class="step-icon">📋</div>
+                        <div class="step-label">研究计划</div>
+                    </div>
+                    <div class="progress-step" id="stepResearch">
+                        <div class="step-icon">🔍</div>
+                        <div class="step-label">深度分析</div>
+                    </div>
+                    <div class="progress-step" id="stepReport">
+                        <div class="step-icon">📄</div>
+                        <div class="step-label">生成报告</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 输入区域 -->
+        <footer class="input-area">
+            <div class="input-container">
+                <textarea
+                    id="questionInput"
+                    placeholder="请输入您想要研究的问题..."
+                    rows="3"
+                    maxlength="1000"
+                ></textarea>
+                <div class="input-actions">
+                    <span class="char-count" id="charCount">0/1000</span>
+                    <button id="sendButton" class="send-button" disabled>
+                        <span class="button-text">发送</span>
+                        <span class="loading-spinner" style="display: none;">⏳</span>
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 消息模板（用于动态创建消息） -->
+    <template id="messageTemplate">
+        <div class="message">
+            <div class="message-header">
+                <span class="message-role"></span>
+                <span class="message-time"></span>
+            </div>
+            <div class="message-content"></div>
+        </div>
+    </template>
+
+    <!-- 研究阶段消息模板 -->
+    <template id="stageMessageTemplate">
+        <div class="stage-message">
+            <div class="stage-header">
+                <span class="stage-icon"></span>
+                <span class="stage-title"></span>
+                <span class="stage-status"></span>
+            </div>
+            <div class="stage-content"></div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>

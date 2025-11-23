@@ -1,0 +1,22 @@
+# Web框架
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# 原有依赖（从根目录复制）
+langchain>=0.1.0
+langchain-openai>=0.1.0
+langgraph>=0.2.0
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+
+# 额外的Web开发依赖
+websockets>=12.0
+python-multipart>=0.0.6
+
+# 开发依赖
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+httpx>=0.25.0
+
+# 可选依赖（用于生产部署）
+gunicorn>=21.0.0

@@ -1,6 +1,12 @@
-langchain
-langchain-openai
-langgraph
-python-dotenv
-pydantic
+# LangGraph 研究助手核心依赖
+langchain>=0.1.0
+langchain-openai>=0.1.0
+langgraph>=0.2.0
+python-dotenv>=1.0.0
+pydantic>=2.0.0
 
+# Web应用依赖（用于运行Web版本）
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+websockets>=12.0
+python-multipart>=0.0.6
